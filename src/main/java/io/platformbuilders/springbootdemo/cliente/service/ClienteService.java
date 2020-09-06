@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import io.platformbuilders.springbootdemo.cliente.dto.ClienteDTO;
 import io.platformbuilders.springbootdemo.cliente.entity.Cliente;
 import io.platformbuilders.springbootdemo.cliente.enumeration.PageOrderEnum;
-import io.platformbuilders.springbootdemo.cliente.excpetion.NegocioException;
+import io.platformbuilders.springbootdemo.cliente.exception.NegocioException;
 
 public interface ClienteService {
 

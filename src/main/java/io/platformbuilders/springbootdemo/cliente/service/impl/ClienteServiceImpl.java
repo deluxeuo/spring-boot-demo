@@ -19,8 +19,8 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import io.platformbuilders.springbootdemo.cliente.dto.ClienteDTO;
 import io.platformbuilders.springbootdemo.cliente.entity.Cliente;
 import io.platformbuilders.springbootdemo.cliente.enumeration.PageOrderEnum;
-import io.platformbuilders.springbootdemo.cliente.excpetion.ClienteNotFoundException;
-import io.platformbuilders.springbootdemo.cliente.excpetion.NegocioException;
+import io.platformbuilders.springbootdemo.cliente.exception.ClienteNotFoundException;
+import io.platformbuilders.springbootdemo.cliente.exception.NegocioException;
 import io.platformbuilders.springbootdemo.cliente.repository.ClienteRepository;
 import io.platformbuilders.springbootdemo.cliente.service.ClienteService;
 

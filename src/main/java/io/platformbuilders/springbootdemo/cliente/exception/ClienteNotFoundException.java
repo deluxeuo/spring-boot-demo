@@ -1,4 +1,4 @@
-package io.platformbuilders.springbootdemo.cliente.excpetion;
+package io.platformbuilders.springbootdemo.cliente.exception;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package io.platformbuilders.springbootdemo.cliente.excpetion;
+package io.platformbuilders.springbootdemo.cliente.exception;
 
 /**
  * <p>Super classe para as esceções lançados pelo framework.</p>
@@ -11,7 +11,7 @@ package io.platformbuilders.springbootdemo.cliente.excpetion;
  * @see <a href="https://httpstatuses.com/">https://httpstatuses.com/</a>
  * @since 1.0.0
  */
-public class GeneralRunTimeException extends RuntimeException {
+public abstract class GeneralException extends Exception {
 
     private static final long serialVersionUID = 7750277264481007108L;
 
@@ -19,7 +19,7 @@ public class GeneralRunTimeException extends RuntimeException {
      * Construtor padrão da exceção.
      * @param statusCode código de erro HTTP
      */
-    public GeneralRunTimeException() {
+    public GeneralException() {
         super();
     }
 
@@ -28,7 +28,7 @@ public class GeneralRunTimeException extends RuntimeException {
      * @param statusCode código de erro HTTP
      * @param msg mensagem do erro
      */
-    public GeneralRunTimeException(String msg) {
+    public GeneralException(String msg) {
         super(msg);
     }
 
@@ -37,7 +37,7 @@ public class GeneralRunTimeException extends RuntimeException {
      * @param statusCode código de erro HTTP
      * @param cause causa origem da exceção lançada
      */
-    public GeneralRunTimeException(Throwable cause) {
+    public GeneralException(Throwable cause) {
         super(cause);
     }
 
@@ -47,7 +47,7 @@ public class GeneralRunTimeException extends RuntimeException {
      * @param msg mensagem do erro
      * @param cause causa origem da exceção lançada
      */
-    public GeneralRunTimeException(String msg, Throwable cause) {
+    public GeneralException(String msg, Throwable cause) {
         super(msg, cause);
     }
 

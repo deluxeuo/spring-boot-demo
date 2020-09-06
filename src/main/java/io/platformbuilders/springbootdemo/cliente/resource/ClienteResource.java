@@ -10,8 +10,8 @@ import org.springframework.validation.BindingResult;
 import io.platformbuilders.springbootdemo.cliente.controller.ClienteController;
 import io.platformbuilders.springbootdemo.cliente.dto.ClienteDTO;
 import io.platformbuilders.springbootdemo.cliente.entity.Cliente;
-import io.platformbuilders.springbootdemo.cliente.excpetion.ClienteNotFoundException;
-import io.platformbuilders.springbootdemo.cliente.excpetion.NegocioException;
+import io.platformbuilders.springbootdemo.cliente.exception.ClienteNotFoundException;
+import io.platformbuilders.springbootdemo.cliente.exception.NegocioException;
 
 @Component
 public class ClienteResource {

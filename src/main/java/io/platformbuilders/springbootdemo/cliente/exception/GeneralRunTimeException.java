@@ -1,9 +1,4 @@
-package io.platformbuilders.springbootdemo.cliente.excpetion;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-import lombok.extern.slf4j.Slf4j;
+package io.platformbuilders.springbootdemo.cliente.exception;
 
 /**
  * <p>Super classe para as esceções lançados pelo framework.</p>
@@ -16,9 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @see <a href="https://httpstatuses.com/">https://httpstatuses.com/</a>
  * @since 1.0.0
  */
-@Slf4j
-@ResponseStatus(value=HttpStatus.UNPROCESSABLE_ENTITY)
-public class NegocioException extends GeneralException {
+public class GeneralRunTimeException extends RuntimeException {
 
     private static final long serialVersionUID = 7750277264481007108L;
 
@@ -26,7 +19,7 @@ public class NegocioException extends GeneralException {
      * Construtor padrão da exceção.
      * @param statusCode código de erro HTTP
      */
-    public NegocioException() {
+    public GeneralRunTimeException() {
         super();
     }
 
@@ -35,7 +28,7 @@ public class NegocioException extends GeneralException {
      * @param statusCode código de erro HTTP
      * @param msg mensagem do erro
      */
-    public NegocioException(String msg) {
+    public GeneralRunTimeException(String msg) {
         super(msg);
     }
 
@@ -44,9 +37,8 @@ public class NegocioException extends GeneralException {
      * @param statusCode código de erro HTTP
      * @param cause causa origem da exceção lançada
      */
-    public NegocioException(Throwable cause) {
+    public GeneralRunTimeException(Throwable cause) {
         super(cause);
-        log.error("Exception {} has occurred" , new Exception(cause));
     }
 
     /**
@@ -55,9 +47,8 @@ public class NegocioException extends GeneralException {
      * @param msg mensagem do erro
      * @param cause causa origem da exceção lançada
      */
-    public NegocioException(String msg, Throwable cause) {
+    public GeneralRunTimeException(String msg, Throwable cause) {
         super(msg, cause);
-        log.error("Exception {} has occurred" , new Exception(cause));
     }
 
 }
