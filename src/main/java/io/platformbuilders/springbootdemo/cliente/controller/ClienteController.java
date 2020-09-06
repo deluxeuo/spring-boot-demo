@@ -58,7 +58,7 @@ public class ClienteController {
 		
 		Cliente cliente = clienteService.save(dto);
 		ClienteDTO dtoSaved = clienteService.convertEntityToDTO(cliente);
-		resource.createSelfLink(cliente, dtoSaved,result);
+		resource.createSelfLink(cliente, dtoSaved);
 		
 		response.setData(dtoSaved);
 		
@@ -74,7 +74,7 @@ public class ClienteController {
 		Cliente cliente = clienteService.findById(clienteId);
 		
 		ClienteDTO dto = clienteService.convertEntityToDTO(cliente);
-		resource.createSelfLink(cliente, dto, null);
+		resource.createSelfLink(cliente, dto);
 		response.setData(dto);
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
@@ -101,7 +101,7 @@ public class ClienteController {
 		Cliente cliente = clienteService.save(dto);
 		ClienteDTO dtoSaved = clienteService.convertEntityToDTO(cliente);
 		
-		resource.createSelfLink(cliente, dtoSaved, result);
+		resource.createSelfLink(cliente, dtoSaved);
 		response.setData(dtoSaved);
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
@@ -164,9 +164,10 @@ public class ClienteController {
 		
 		ClienteDTO dtoSaved = clienteService.convertEntityToDTO(cliente);
 	    
-		resource.createSelfLink(cliente, dtoSaved,null);
+		resource.createSelfLink(cliente, dtoSaved);
 		response.setData(dtoSaved);
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+	
 }
