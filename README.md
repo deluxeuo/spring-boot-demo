@@ -30,12 +30,12 @@ Access actuator to check if the service is online
 
 Available endpoints
 
-POST ```http://localhost:8080/v1/clientes```
-GET ```http://localhost:8080/v1/clientes/{id}```
-GET ```http://localhost:8080/v1/clientes?cpf=??&nome=??```
-PUT ```http://localhost:8080/v1/clientes/{id}```
-DELETE ```http://localhost:8080/v1/clientes/{id}```
-PATCH ```http://localhost:8080/v1/clientes/{id}```
+POST ```http://localhost:8080/v1/clientes``` <br>
+GET ```http://localhost:8080/v1/clientes/{id}```<br>
+GET ```http://localhost:8080/v1/clientes?cpf=??&nome=??```<br>
+PUT ```http://localhost:8080/v1/clientes/{id}```<br>
+DELETE ```http://localhost:8080/v1/clientes/{id}```<br>
+PATCH ```http://localhost:8080/v1/clientes/{id}```<br>
 
 Body test POST
 
