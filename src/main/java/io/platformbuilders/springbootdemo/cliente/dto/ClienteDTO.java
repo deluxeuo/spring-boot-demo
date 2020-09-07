@@ -20,9 +20,6 @@ import lombok.Setter;
 
 /**
  * Class that implements Transaction data transfer object (DTO)
- * 
- * @author Mariana Azevedo
- * @since 01/04/2020
  */
 @Getter
 @Setter
