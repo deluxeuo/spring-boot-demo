@@ -67,7 +67,7 @@ public class ClienteServiceImpl implements ClienteService {
 		Sort sort = Direction.ASC.name().equals(order.getValue()) ? 
 				Sort.by("id").ascending() : Sort.by("id").descending();
 		PageRequest pg = PageRequest.of(page, 1, sort);
-		return clienteRepository.findByCpfAndNome(cpf, nome, pg).map(e -> convertEntityToDTO(e));
+		return clienteRepository.findByCpfAndNomeIgnoreCase(cpf, nome, pg).map(e -> convertEntityToDTO(e));
 	}
 	
 	@Override

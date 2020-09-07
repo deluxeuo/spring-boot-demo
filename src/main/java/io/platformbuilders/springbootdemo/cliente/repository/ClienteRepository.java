@@ -8,6 +8,6 @@ import io.platformbuilders.springbootdemo.cliente.entity.Cliente;
 
 public interface ClienteRepository extends CrudRepository<Cliente, Long> {
 
-	Page<Cliente> findByCpfAndNome(String cpf, String nome, Pageable pg);
+	Page<Cliente> findByCpfAndNomeIgnoreCase(String cpf, String nome, Pageable pg);
 
 }
