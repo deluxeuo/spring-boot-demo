@@ -34,7 +34,6 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/v1/clientes")
 public class ClienteController {
 	
-	
 	@Autowired
 	private ClienteResource resource;
 	
@@ -53,7 +52,7 @@ public class ClienteController {
 		
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(error -> response.addErrorMsgToResponse(error.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(response);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 		
 		Cliente cliente = clienteService.save(dto);
@@ -89,13 +88,7 @@ public class ClienteController {
 
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(error -> response.addErrorMsgToResponse(error.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(response);
-		}
-
-		Cliente clienteToFind = clienteService.findById(dto.getId());
-		
-		if (clienteToFind.getId().compareTo(dto.getId()) != 0) {
-			throw new NegocioException("Error 004");
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 
 		Cliente cliente = clienteService.save(dto);
@@ -130,8 +123,7 @@ public class ClienteController {
 		
 		ClienteResponse<Page<ClienteDTO>> response = new ClienteResponse<>();
 		
-		Page<ClienteDTO> clientesDTO = clienteService.findAllCliente(cpf, nome, 
-				page, PageOrderEnum.getSortDirection(order));
+		Page<ClienteDTO> clientesDTO = clienteService.findAllCliente(cpf, nome, page, PageOrderEnum.getSortDirection(order));
 		
 		if (clientesDTO.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -154,9 +146,14 @@ public class ClienteController {
 	
 	@PatchMapping("/{id}")
 	@ApiOperation(value = "Route to update partial a cliente by your id in the API")
-	public ResponseEntity<?> partialUpdateCliente(@Valid @RequestBody String dto, @PathVariable("id") Long id) throws NegocioException {
+	public ResponseEntity<?> partialUpdateCliente(@Valid @RequestBody String dto, @PathVariable("id") Long id, BindingResult result) throws NegocioException {
 	    
 		ClienteResponse<ClienteDTO> response = new ClienteResponse<>();
+		
+		if (result.hasErrors()) {
+			result.getAllErrors().forEach(error -> response.addErrorMsgToResponse(error.getDefaultMessage()));
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+		}
 		
 		Cliente cliente = clienteService.findById(id);
 		
