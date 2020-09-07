@@ -20,13 +20,13 @@ After that, clone this code make a
 ```mvn clean install ``` <br>
 ```mvn spring-boot: run```
 
-To test, access the swagger documentation
-
-```http://localhost:8080/swagger-ui/#/cliente-controller```
-
 Access actuator to check if the service is online
 
 ```http://localhost:8080/actuator/health``` 
+
+To test, access the swagger documentation
+
+```http://localhost:8080/swagger-ui/#/cliente-controller```
 
 Available endpoints
 
