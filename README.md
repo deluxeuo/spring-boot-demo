@@ -1,6 +1,6 @@
 # Spring Boot for PlataformBuilders
 
-This project aims to present a complete POC (crud) of spring-boot 2.3 using hateoas
+This project aims to present a complete POC (crud) of spring-boot 2.3 using
 Stacks:
 
 - Spring Boot 2.3
